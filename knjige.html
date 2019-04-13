@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Knjige</title>
+    <script
+            src="https://code.jquery.com/jquery-3.4.0.js"
+            integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<ul id="knjige"></ul>
+
+<script>
+
+    function pozdrav(){
+        alert('Hola!');
+    }
+
+    function prikaziKnjige(){
+        $.get('http://192.168.1.51:3000/knjige', function (data) {
+            // console.log(data);
+            data.forEach(function (k) {
+                // console.log(k);
+                var li = '<li>' + k.name + ',' + k.author + '</li>';
+                $('#knjige').append(li);
+            });
+        });
+    }
+
+    $(document).ready(prikaziKnjige);
+
+</script>
+
+</body>
+</html>
