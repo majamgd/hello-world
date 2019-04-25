@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gradovi</title>
+    <script
+            src="https://code.jquery.com/jquery-3.4.0.js"
+            integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<select name="gradovi" id="gradovi">
+    <!--<option value="saab">Saab</option>-->
+</select>
+
+
+<script>
+
+    function ucitajGradove(){
+        console.log('gradovi ...');
+        // http://192.168.1.51:3000/gradovi
+        $.get('http://192.168.1.51:3000/gradovi', (gradovi) => {
+            //console.log(gradovi);
+            gradovi.forEach((grad) => {
+                // u svakom prolazu, za svaki grad se ovo izvrsava
+                console.log(grad);
+                // var opt = '<option value="' + grad.zip + '">' + grad.name +  '</option>>';
+                const opt = `<option value="${grad.zip}">${grad.name}</option>`; // intrerpolacija
+                $('#gradovi').append(opt);
+            });
+        });
+    }
+
+    $(document).ready(ucitajGradove);
+</script>
+
+</body>
+</html>
