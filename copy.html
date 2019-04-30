@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +8,38 @@
 </head>
 <body>
 
-
+    <input id="txt1" type="text">
+    <button onclick="obrisiTxt1()">Delete</button></br>
+    <input type="text" id="txt2">
+    <button onclick="copy()">Copy</button></br>
+    <button id="btnrotiraj" onclick="izrotirajAsync()">Izrotiraj</button>
     
     <script>
+        function obrisiTxt1(){
+            document.getElementById('txt1').value='';
+        }
+        function copy(){
+            var vrednostTxt2 = document.getElementById('txt2').value;
+            document.getElementById('txt1').value=vrednostTxt2;
+        }
+        
+        function izrotirajAsync() {
+            // disable
+            document.getElementById("btnrotiraj").disabled = true;
+            setTimeout(function () {
+                izrotiraj();
+                // enable
+                document.getElementById("btnrotiraj").disabled = false;
+            }, 2000);
+        }
+        
+        function izrotiraj() {
+            var vrednost1 = document.getElementById('txt1').value;
+            var vrednost2 = document.getElementById('txt2').value;
+            document.getElementById('txt1').value = vrednost2;
+            document.getElementById('txt2').value = vrednost1;
+        }
+
        
     </script>
 </body>
