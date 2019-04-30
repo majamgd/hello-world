@@ -6,9 +6,9 @@ function sat() {
     return (new Date()).getHours()
 }
 
-function godina() {
+var godina = function () {
     return (new Date()).getFullYear()
-}
+};
 
 var a =  godina();
 console.log(a);

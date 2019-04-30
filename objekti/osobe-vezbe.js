@@ -71,12 +71,12 @@ var godista = osobeNiz.map((g) => {
 });
 // console.log(godista);
 
-// var xxx = osobeNiz
-//             .filter(osoba => osoba.zensko)
-//             .map(o => {
-//                 return {ime : o.ime, godiste : o.godiste, zensko : o.zensko};
-//             })
-//             .forEach( o => console.log(o));
+var xxx = osobeNiz
+            .filter(osoba => osoba.zensko)
+            .map(o => {
+                return {ime : o.ime, godiste : o.godiste, zensko : o.zensko};
+            })
+            .forEach( o => console.log(o));
 
 osobeNiz.forEach((aaa)=>{
     console.log(aaa.getInfo());
