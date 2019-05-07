@@ -38,9 +38,10 @@ console.log('result', result);
 // assert(result[0], 'Starttt');
 // assert(result[1], 'Stoppp');
 
-result = executeFunctions(data, 'sto');
+result = executeFunctions(data, 'sto');`
 console.log('result', result);
 // assert( Array.isArray(result), true);
 // assert(result.length, 1);
 // assert(result[0], 'Stoppp');
 
+`
