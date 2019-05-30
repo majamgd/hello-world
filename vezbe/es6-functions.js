@@ -45,7 +45,7 @@ let osobe = [
 
 // 1. forEach
 osobe.forEach( (item) => {
-    // item.info();
+     item.info();
 } );
 
 // 2. map
@@ -69,5 +69,5 @@ let izfiltrirano = osobe.filter( (item) => {
 // let nadjeno = osobe.find( (item) => {
 //     return item.ime.startsWith('Z');
 // } );
-let nadjeno = osobe.find( item => item.ime.startsWith('Z'));
-console.log(nadjeno);
+//let nadjeno = osobe.find( item => item.ime.startsWith('Z'));
+//console.log(nadjeno);
